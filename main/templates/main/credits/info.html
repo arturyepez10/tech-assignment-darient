@@ -5,9 +5,27 @@
 {% endblock title %}
 
 {% block content %}
+    <h3 class="mb-5">{{credit}}</h3>
     <section>
-        <div>
-            {{credit}}
+        <div class="d-flex flex-column">
+            <strong><p>CLIENT: {{credit.clientOwner}}</p></strong>
+            <strong><p>BANK: {{credit.bankOwner}}</p></strong>
+            <p>DESCRIPTION: {{credit.description}}</p>
+            <p>MIN. PAYMENT: {{credit.minPayment}}</p>
+            <p>MAX. PAYMENT: {{credit.maxPayment}}</p>
+            <p>TERMS OF CREDIT (MONTHS): {{credit.termsOfCredits}}</p>
+            <p>REGISTER DATE: {{credit.registerDate}}</p>
+            <p>
+                TYPE OF CREDIT:
+                {% if credit.creditType == "A" %}
+                    Automobile
+                {% elif credit.creditType == "M" %}
+                    Mortgage
+                {% elif credit.creditType == "C" %}
+                    Commercial
+                {% endif %}
+            </p>
         </div>
+        <button class="btn btn-secondary">UPDATE</button>
     </section>
 {% endblock content %}
