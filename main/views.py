@@ -50,7 +50,45 @@ def createClient(response):
         "buttonName": "Create New Client"
     }
 
+    return render(response, "main/create.html", variables)
+
+def updateClient(response, id):
+    c = Client.objects.get(id=id)
+    print(c)
+
+    if response.method == "POST":
+        form = CreateNewClient(response.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            cl = Client(
+                firstName=data["firstName"],
+                lastName=data["lastName"],
+                birthDate=data["birthDate"],
+                age=data["age"],
+                nationality=data["nationality"],
+                address=data["address"],
+                email=data["email"],
+                phone=data["phone"]
+            )
+            cl.save()
+            return HttpResponseRedirect('/clients')
+    else:
+        form = CreateNewClient(instance=c)
+
+    variables = {
+        "form": form,
+        "name": "Update Client",
+        "actionName": "/clients/update",
+        "buttonName": "Update Client"
+    }
+
     return render(response, "main/create.html", variables) 
+
+def deleteClient(response, id):
+    c = Client.objects.get(id=id)
+    c.delete()
+
+    return HttpResponseRedirect('/clients')
 
 # BANKS
 def banks(response):
