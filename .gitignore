@@ -7,3 +7,11 @@ build/
 *.egg-info
 *.conf
 __pycache__
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
