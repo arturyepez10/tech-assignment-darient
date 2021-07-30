@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Credit's List
+{% endblock title %}
+
+{% block content %}
+    <section>
+        {% for credit in credits %}
+            <div>
+                <a href="{% url "credit-info" credit.id %}">
+                    {{credit}}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock content %}

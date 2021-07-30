@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Homepage
+{% endblock title %}
+
+{% block content %}
+    <section>
+        <h1>Welcome to the Homepage</h1>
+
+        <ul>
+            <li>
+                <a href="{% url 'clients-list' %}">
+                    Clients
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'banks-list' %}">
+                    Banks
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'credits-list' %}">
+                    Credits
+                </a>
+            </li>
+        </ul>
+    </section>
+{% endblock content %}

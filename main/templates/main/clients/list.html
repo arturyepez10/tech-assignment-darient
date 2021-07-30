@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Client's List
+{% endblock title %}
+
+{% block content %}
+    <section>
+        {% for client in clients %}
+            <div>
+                <a href="{% url "client-info" client.id %}">
+                    {{client}}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock content %}

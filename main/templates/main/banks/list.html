@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Banks' List
+{% endblock title %}
+
+{% block content %}
+    <section>
+        {% for bank in banks %}
+            <div>
+                <a href="{% url "bank-info" bank.id %}">
+                    {{bank}}
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock content %}
