@@ -5,13 +5,19 @@
 {% endblock title %}
 
 {% block content %}
+    <h3 class="mb-5">List of Banks</h3>
     <section>
-        {% for bank in banks %}
-            <div>
-                <a href="{% url "bank-info" bank.id %}">
-                    {{bank}}
-                </a>
-            </div>
-        {% endfor %}
+        <div>
+            {% for bank in banks %}
+                <div>
+                    <a href="{% url "bank-info" bank.id %}">
+                        <h4>{{bank}}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{% url "bank-create" %}" class="mt-2">
+            <button class="btn btn-success">Add</button>
+        </a>
     </section>
 {% endblock content %}

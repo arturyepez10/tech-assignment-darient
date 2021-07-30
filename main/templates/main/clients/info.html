@@ -5,9 +5,26 @@
 {% endblock title %}
 
 {% block content %}
+    <h3 class="mb-5">{{client}}</h3>
     <section>
-        <div>
-            {{client}}
+        <div class="d-flex flex-column">
+            <p>NAME: {{client.firstName}} {{client.lastName}}</p>
+            <p>BIRTH DATE: {{client.birthDate}}</p>
+            {% if client.age %}<p>AGE: {{client.age}}</p>{% endif %}
+            {% if client.nationality %}<p>NATIONALITY: {{client.nationality}}</p>{% endif %}
+            {% if client.address %}<p>ADDRESS: {{client.address}}</p>{% endif %}
+            <p>EMAIL: {{client.email}}</p>
+            {% if client.phone %}<p>PHONE: {{client.phone}}</p>{% endif %}
+            <p>
+                CLIENT TYPE:
+                {% if client.clientType == "N" %}
+                    Natural
+                {% elif client.clientType == "L" %}
+                    Legal
+                {% endif %}
+            </p>
         </div>
+        <button class="btn btn-secondary">UPDATE</button>
+        <button class="btn btn-danger">ELIMINATE</button>
     </section>
 {% endblock content %}

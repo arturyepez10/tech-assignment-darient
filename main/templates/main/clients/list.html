@@ -5,13 +5,19 @@
 {% endblock title %}
 
 {% block content %}
+    <h3 class="mb-5">List of Clients</h3>
     <section>
-        {% for client in clients %}
-            <div>
-                <a href="{% url "client-info" client.id %}">
-                    {{client}}
-                </a>
-            </div>
-        {% endfor %}
+        <div>
+            {% for client in clients %}
+                <div>
+                    <a href="{% url "client-info" client.id %}">
+                        <h4>{{client}}</h4>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{% url "client-create" %}" class="mt-2">
+            <button class="btn btn-success">Add</button>
+        </a>
     </section>
 {% endblock content %}

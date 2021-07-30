@@ -5,9 +5,21 @@
 {% endblock title %}
 
 {% block content %}
+    <h3 class="mb-5">{{bank}}</h3>
     <section>
-        <div>
-            {{bank}}
+        <div class="d-flex flex-column">
+            <p>NAME: {{bank.name}}</p>
+            {% if bank.address %}<p>ADDRESS: {{bank.address}}</p>{% endif %}
+            <p>
+                TYPE: 
+                {% if bank.bankType == "P" %}
+                    Private
+                {% elif bank.bankType == "G"%}
+                    Government
+                {% endif %}
+            </p>
         </div>
+        <button class="btn btn-secondary">UPDATE</button>
+        <button class="btn btn-danger">ELIMINATE</button>
     </section>
 {% endblock content %}

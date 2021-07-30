@@ -5,13 +5,16 @@
 {% endblock title %}
 
 {% block content %}
+    <h3 class="mb-5">{{name}}</h3>
     <section>
-        <form method="post" action={{actionName}}>
+        <form method="post" action={{actionName}} class="forms-group">
             {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit" name="save">
-                {{buttonName}}
-            <button>
+            <div class="input-group mb-3 flex-column">
+                {{form.as_p}}
+                <button type="submit" name="save" class="btn btn-success">
+                    {{buttonName}}
+                </button>
+            </div>
         </form>
     </section>
 {% endblock content %}
