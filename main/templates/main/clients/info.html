@@ -25,6 +25,8 @@
             </p>
         </div>
         <button class="btn btn-secondary">UPDATE</button>
-        <button class="btn btn-danger">ELIMINATE</button>
+        <a href="{% url 'client-delete' client.id %}">
+            <button class="btn btn-danger">ELIMINATE</button>
+        </a>
     </section>
 {% endblock content %}
