@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{name}} 
+{% endblock title %}
+
+{% block content %}
+    <section>
+        <form method="post" action={{actionName}}>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" name="save">
+                {{buttonName}}
+            <button>
+        </form>
+    </section>
+{% endblock content %}
