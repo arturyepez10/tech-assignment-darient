@@ -7,7 +7,7 @@ from .models import Bank, Client
 # Constants
 BANK_TYPES= (
     ('P', 'Private'),
-    ('G', 'Gobernment')
+    ('G', 'BANK_TYPES')
 )
 
 CLIENT_TYPES = (
