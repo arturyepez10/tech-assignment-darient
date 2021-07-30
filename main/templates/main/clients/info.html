@@ -24,7 +24,9 @@
                 {% endif %}
             </p>
         </div>
-        <button class="btn btn-secondary">UPDATE</button>
+        <a href="{% url 'client-update' client.id %}">
+            <button class="btn btn-secondary">UPDATE</button>
+        </a>
         <a href="{% url 'client-delete' client.id %}">
             <button class="btn btn-danger">ELIMINATE</button>
         </a>
