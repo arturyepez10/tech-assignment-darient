@@ -48,7 +48,7 @@ class Credit(models.Model):
     minPayment = models.DecimalField(max_digits=12, decimal_places=2)
     maxPayment = models.DecimalField(max_digits=12, decimal_places=2)
     termsOfCredits = models.PositiveIntegerField()
-    registerDate = models.DateTimeField(auto_now_add=True)
+    registerDate = models.DateTimeField(auto_now_add=True, null=True)
     creditType = models.CharField(max_length=1, choices=CREDIT_TYPES)
 
     def __str__(self):
