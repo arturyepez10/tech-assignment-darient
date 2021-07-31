@@ -26,6 +26,12 @@ The Credits and Banks, on the other hand, count with the operations of:
 
 In order to run the project, you must:
 
+0. Install the requirements of the project, in order to do that:
+```
+pip install -f requirement.txt
+```
+Remember, you need to be in the root of the project.
+
 1. Clone the repository in your computer.
 
 2. Find root of the project and run the next sequence of commands:
