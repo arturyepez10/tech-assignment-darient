@@ -31,7 +31,7 @@ In order to run the project, you must:
 2. Find root of the project and run the next sequence of commands:
 ```
 python manage.py makemigrations
-python manage.py migrate
+python manage.py migrate --run-syncdb
 ```
 
 3. All ready to go, to run the project:
